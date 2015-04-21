@@ -52,22 +52,28 @@ Ask to install something
 
 
 Install-Program -ChocolateyKey 'git' -Description "Git zelf... Deze heb je sowieso nodig :)" -Site "http://git-scm.com/"
-Install-Program -ChocolateyKey 'git-credential-winstore' -Description "Zorgt ervoor dat je je login/paswoord op GitHub, BitBucket, ... slechts 1x moet ingeven (Enkel voor CLI)" -Site "https://gitcredentialstore.codeplex.com/"
 
 Write-Title 'COMMAND LINE' 'yellow'
+Write-Verbose 'Cmder + PowerShell + Posh-Git is wat ikzelf momenteel gebruik.' -Verbose
 
-Install-Program -Thumbs 'up' -ChocolateyKey 'cmder' -Description "Git CLI vanop een cmd.exe prompt (ConEmu + CLink) dat Control+V ondersteund (en dat is nog maar het tipje van de ijsberg)" -Site "http://gooseberrycreative.com/cmder/"
+Write-Title "Git Bash"
+Write-Host "Een (beperkte) Bash shell wordt samen met Git geïnstalleerd. Plaats een ``.bashrc`` file in `$HOME (c:\users\name\). Check config/`$HOME/.bashrc en config/`$HOME/bash_prompt voor voorbeelden. Bekende dotfile repos opzoeken voor inspiratie is waarschijnlijk je beste optie op Linux/OSX. Maar dit is Windoze dus..."
 
-# install ps1
+Install-Program -ChocolateyKey 'git-credential-winstore' -Description "Zorgt ervoor dat je je login/paswoord op GitHub, BitBucket, ... slechts 1x moet ingeven (Enkel voor CLI)" -Site "https://gitcredentialstore.codeplex.com/"
+
+Install-Program -Thumbs 'up' -ChocolateyKey 'cmder' -Description "Git CLI vanop een cmd.exe vervanger (ConEmu + CLink) die Control+V ondersteund (en dat is nog maar het tipje van de ijsberg). Een dag cmder en je bent vergeten wat cmd.exe was!" -Site "http://gooseberrycreative.com/cmder/"
+
+Install-Program -Thumbs 'up' -ChocolateyKey 'poshgit' -Description "Een fancy git PowerShell prompt die de ``git status`` weergeeft. Om dit automatisch te laden met PowerShell, check config/MYDOCUMENTS/WindowsPowerShell/. Check source code comment voor installatie met PsGet." -Site "https://github.com/dahlbyk/posh-git"
+# Als alternatief Posh-Git installeren met PsGet vanop PowerShell prompt:
+# (new-object Net.WebClient).DownloadString("http://psget.net/GetPsGet.ps1") | iex
+# Install-Module Posh-Git
+
+Install-Program -Thumbs 'up' -ChocolateyKey 'cygwin' -Description "Voor diegenen die liever in een meer Linux-like omgeving werken is dit de topper. Waar Posh-Git ongeveer je enige optie is in PowerShell kun je bij Cygwin kiezen uit over de decennia gebouwde open source dotfiles..." -Site "https://www.cygwin.com/"
 
 Write-Title 'GUI TOOLING' 'yellow'
 
-# You may like
 Install-Program -Thumbs 'up' -ChocolateyKey 'sourcetree' -Description "Git GUI van Atlassian. De meeste collega's op ons project gebruiken deze GUI. Als je de commandline schuwt dan is dit waarschijnlijk je beste optie." -Site "http://www.sourcetreeapp.com/"
-
-# You may like
 Install-Program -Thumbs 'up' -ChocolateyKey 'gitextensions' -Description "Voeg Git Extensions toe aan je Explorer ContextMenus + integratie met Visual Studio (plugin)" -Site "https://code.google.com/p/gitextensions/"
 
 Install-Program -Thumbs 'down' -ChocolateyKey 'tortoisegit' -Description "Zoals TortoiseSVN maar dan voor Git. Misschien interessant voor mensen met SVN/Tortoise achtergrond maar is met een SVN 'mindset' gemaakt en ontbreekt daardoor Git-specifieke functionaliteit die wel in vb SourceTree zit." -Site "https://code.google.com/p/tortoisegit/"
-
 Install-Program -Thumbs 'down' -ChocolateyKey 'githubforwindows' -Description "!!Niet nodig voor GitHub zelf!! Dit is ook gewoon een git GUI, ontwikkeld door GitHub. (en was teleurstellend de laatste keer ik geprobeerd heb - dat was weliswaar 2 jaar geleden)" -Site "https://windows.github.com/"
