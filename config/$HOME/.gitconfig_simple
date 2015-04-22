@@ -1,0 +1,49 @@
+[user]
+	name = Laoujin
+	email = woutervs@hotmail.com
+
+[alias]
+	# Show all defined aliases
+	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
+
+	# Extremely common aliases
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+
+	# Find more useful aliases all over the interwebs!
+
+[core]
+	autocrlf = true
+	excludesfile = ~/.gitignore_global
+	attributesfile = ~/.gitattributes_global
+
+[push]
+	default = simple
+
+[credential]
+	helper = !'C:\\Users\\Wouter\\AppData\\Roaming\\GitCredStore\\git-credential-winstore.exe'
+
+# Available colors: normal, black, red, green, yellow, blue, magenta, cyan, or white
+# Second optional color param values: bold, dim, ul (underline), blink, and reverse (swap foreground and background)
+# Posh-Git colors are defined in MYDOCUMENTS\WindowsPowerShell profile!
+
+[color "branch"]
+	current = yellow
+	local = white
+	remote = magenta
+
+[color "status"]
+	header = white
+	changed = magenta bold
+	untracked = magenta bold
+	unmerged = magenta reverse
+	added = yellow
+	branch = white
+
+[color "diff"]
+	meta = blue white
+	frag = normal bold
+	old = magenta bold
+	new = green bold

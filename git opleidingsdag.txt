@@ -1,7 +1,9 @@
+https://presentate.com/bobthecow/talks/changing-history
+
+
 
 git update-index --assume-unchanged filename
 
-also a bit about encryption?
 
 make sure no keys, passwords are in any commit when pushing to github
 --> Amazon keys are being harvested on GitHub and used for bitcoin mining
@@ -12,19 +14,11 @@ http://stackoverflow.com/questions/11575398/how-can-i-save-my-secret-keys-and-pa
 
 https://github.com/tj/git-extras/wiki/Commands#git-extras
 
-ps script to:
-- install chocolatey
-- git, cmder, sourcetree, ps posh, git extensions :)
-
 git pull 
 vs
 git fetch
 git merge
---> tools instellen (ook naam, aliasses, ...)
 
-gitk
-sourcetree
-git extensions
 --> include reg files voor git bash / powershell / st3
 
 git ls-files --> uses .gitignore, 
@@ -32,15 +26,6 @@ git grep "html" -- "*.js"
 git log --grep=fake
 git log --grep=frotz --and --author=Linus
 git grep -l --all-match -e shutdown -e localhost
-vs
-powershell git posh? met PS syntax for grep?
-
-
-
-CLI Advanced:
-•	Git Bash
-•	Cmder
-•	Cygwin
 
 Dotfiles
 Configure mergetool
@@ -56,17 +41,12 @@ o   Commando’s: init, add, status, commit, log, diff, push, pull, merge
 o   .gitignore, .gitattributes
 o   Git internals: den DAG ?
 •         Setup / Configuratie
-o   Git Bash (Aliases, bashrc, prompt configuratie, …)
-o   Git in cmd(er)
-o   Git in Powershell
 o   Git in Visual Studio (en hoe snel je tegen de beperkingen van hun implementatie aanloopt: vb geen meerdere remotes mogelijk)
 •         Tooling
 o   Gitk
 o   GitExtensions
 o   SourceTree
 o   SeeGit (tooltje van de Haack dat wel helpt om alles wat te visualiseren)
-o   Mss de GitHub Windows client (maar de laatste keer dat ik dat gebruikt heb was dat maar fubar – is wel al jaar+ geleden)
-•         Advanced:
 o   Git flow
 o   Commando’s: stash, branching, checkout, amending, cherry-pick, rebase, revert, …
 o   Git modules
@@ -97,11 +77,6 @@ Git reset --hard HEAD@{1}
 
 
 git add --interactive
-
-Van: Wouter Van Schandevijl [mailto:Wouter.VanSchandevijl@digipolis.be] 
-Verzonden: maandag 23 maart 2015 10:45
-Aan: woutervs@hotmail.com
-Onderwerp: Git
 
 https://help.github.com/articles/remove-sensitive-data/
 more stuff with update-index –assume-unchanged

@@ -1,0 +1,51 @@
+
+# Auto detect text files and perform LF normalization
+# http://davidlaing.com/2012/09/19/customise-your-gitattributes-to-become-a-git-ninja/
+* text=auto
+
+*.cs diff=csharp
+
+# Custom for Visual Studio
+*.sln text eol=crlf merge=union 
+*.csproj merge=union
+*.vbproj merge=union
+*.fsproj merge=union
+*.dbproj merge=union
+
+# Documents
+*.docx diff=astextplain
+*.DOCX diff=astextplain
+*.pdf diff=astextplain
+*.PDF diff=astextplain
+*.rtf diff=astextplain
+*.RTF diff=astextplain
+*.md text
+*.csv text
+*.sql text
+
+# Graphics
+*.png binary
+*.jpg binary
+*.gif binary
+*.ico binary
+*.svg text
+
+# Use filter to encrypt/decrypt (Entire repo only)
+# # http://stackoverflow.com/questions/11575398/how-can-i-save-my-secret-keys-and-password-securely-in-my-version-control-system
+# * filter=openssl diff=openssl
+# [merge]
+# 	renormalize = true
+
+# .gitencrypt folder
+# with bash files: clean_filter_openssl, smudge_filter_openssl, diff_filter_openssl
+
+# .gitconfig
+# [filter "openssl"]
+# 	smudge = ~/.gitencrypt/smudge_filter_openssl
+# 	clean = ~/.gitencrypt/clean_filter_openssl
+# [diff "openssl"]
+# 	textconv = ~/.gitencrypt/diff_filter_openssl
+# mkdir ~/.gitencrypt
+# touch ~/.gitencrypt/smudge_filter_openssl
+# touch ~/.gitencrypt/clean_filter_openssl
+# touch ~/.gitencrypt/diff_filter_openssl

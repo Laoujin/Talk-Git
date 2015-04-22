@@ -68,9 +68,12 @@ Install-Program -Thumbs 'up' -ChocolateyKey 'poshgit' -Description "Een fancy gi
 # (new-object Net.WebClient).DownloadString("http://psget.net/GetPsGet.ps1") | iex
 # Install-Module Posh-Git
 
+# TODO: Create dir & Copy the Microsoft.PowerShell_profile.ps1 (if it doesn't yet exist)
+
 Install-Program -Thumbs 'up' -ChocolateyKey 'cygwin' -Description "Voor diegenen die liever in een meer Linux-like omgeving werken is dit de topper. Waar Posh-Git ongeveer je enige optie is in PowerShell kun je bij Cygwin kiezen uit over de decennia gebouwde open source dotfiles..." -Site "https://www.cygwin.com/"
 
 Write-Title 'GUI TOOLING' 'yellow'
+Write-Host "GUI die bij git zit: ``gitk [--all] [filename]``. Te gebruiken voor simpele lookups want het is nogal 'ruw' :)"
 
 Install-Program -Thumbs 'up' -ChocolateyKey 'sourcetree' -Description "Git GUI van Atlassian. De meeste collega's op ons project gebruiken deze GUI. Als je de commandline schuwt dan is dit waarschijnlijk je beste optie." -Site "http://www.sourcetreeapp.com/"
 Install-Program -Thumbs 'up' -ChocolateyKey 'gitextensions' -Description "Voeg Git Extensions toe aan je Explorer ContextMenus + integratie met Visual Studio (plugin)" -Site "https://code.google.com/p/gitextensions/"
