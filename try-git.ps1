@@ -87,3 +87,9 @@ Install-Program -Thumbs 'up' -ChocolateyKey 'gitextensions' -Description "Voeg G
 
 Install-Program -Thumbs 'down' -ChocolateyKey 'tortoisegit' -Description "Zoals TortoiseSVN maar dan voor Git. Misschien interessant voor mensen met SVN/Tortoise achtergrond maar is met een SVN 'mindset' gemaakt en ontbreekt daardoor Git-specifieke functionaliteit die wel in vb SourceTree zit." -Site "https://code.google.com/p/tortoisegit/"
 Install-Program -Thumbs 'down' -ChocolateyKey 'githubforwindows' -Description "!!Niet nodig voor GitHub zelf!! Dit is ook gewoon een git GUI, ontwikkeld door GitHub. (en was teleurstellend de laatste keer ik geprobeerd heb - dat was weliswaar 2 jaar geleden)" -Site "https://windows.github.com/"
+
+Write-Host
+Write-Title "Andere"
+
+Write-Host "SeeGit"
+Write-Host "VisualStudio plugins"

@@ -27,7 +27,6 @@ git log --grep=fake
 git log --grep=frotz --and --author=Linus
 git grep -l --all-match -e shutdown -e localhost
 
-Dotfiles
 Configure mergetool
 Configure editor (vi)
 
@@ -38,14 +37,8 @@ Configure editor (vi)
 Git – zou eerst kunnen checken wat de Git ervaring is en/of welke interesses om dan ergens een selectie te doen uit:
 •         Basics
 o   Commando’s: init, add, status, commit, log, diff, push, pull, merge
-o   .gitignore, .gitattributes
 o   Git internals: den DAG ?
-•         Setup / Configuratie
 o   Git in Visual Studio (en hoe snel je tegen de beperkingen van hun implementatie aanloopt: vb geen meerdere remotes mogelijk)
-•         Tooling
-o   Gitk
-o   GitExtensions
-o   SourceTree
 o   SeeGit (tooltje van de Haack dat wel helpt om alles wat te visualiseren)
 o   Git flow
 o   Commando’s: stash, branching, checkout, amending, cherry-pick, rebase, revert, …
