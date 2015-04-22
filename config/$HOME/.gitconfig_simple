@@ -3,9 +3,6 @@
 	email = woutervs@hotmail.com
 
 [alias]
-	# Show all defined aliases
-	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
-
 	# Extremely common aliases
 	ci = commit
 	br = branch
@@ -13,14 +10,6 @@
 	df = diff
 
 	# Find more useful aliases all over the interwebs!
-
-[core]
-	autocrlf = true
-	excludesfile = ~/.gitignore_global
-	attributesfile = ~/.gitattributes_global
-
-[push]
-	default = simple
 
 [credential]
 	helper = !'C:\\Users\\Wouter\\AppData\\Roaming\\GitCredStore\\git-credential-winstore.exe'

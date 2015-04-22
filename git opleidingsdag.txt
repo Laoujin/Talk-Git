@@ -1,3 +1,7 @@
+9u30 - 10u30: Git for .NET devs
+
+
+
 https://presentate.com/bobthecow/talks/changing-history
 
 
@@ -32,7 +36,7 @@ Configure editor (vi)
 
 
 
-9u30 - 10u30: Git for .NET devs
+
 
 Git – zou eerst kunnen checken wat de Git ervaring is en/of welke interesses om dan ergens een selectie te doen uit:
 •         Basics
