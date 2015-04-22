@@ -38,7 +38,7 @@ Ask to install something
 		$likeText = if ($Thumbs -eq 'up') {"You may like"} else {"You probably won't like"}
 		Write-Host "Evaluation: $likeText" -ForegroundColor magenta
 	}
-	Write-Output $Description
+	Write-Host $Description
 	if ($Site) {
 		Write-Host "Url: $Site"
 	}
@@ -46,7 +46,6 @@ Ask to install something
 	if ($confirm) {
 		cinst -y $ChocolateyKey
 	}
-	return $confirm
 }
 
 
@@ -68,7 +67,15 @@ Install-Program -Thumbs 'up' -ChocolateyKey 'poshgit' -Description "Een fancy gi
 # (new-object Net.WebClient).DownloadString("http://psget.net/GetPsGet.ps1") | iex
 # Install-Module Posh-Git
 
-# TODO: Create dir & Copy the Microsoft.PowerShell_profile.ps1 (if it doesn't yet exist)
+$profilePath = Join-Path ([Environment]::GetFolderPath("mydocuments")) "WindowsPowerShell"
+$profileFile = Join-Path $profilePath "Microsoft.PowerShell_profile.ps1"
+if (-not (Test-Path $profileFile)) {
+	$confirm = Read-Host "Posh-Git automatisch laden met PowerShell?"
+	if ($confirm) {
+		mkdir $profilePath
+		Copy-Item "PSScriptRoot\config\MYDOCUMENTS\WindowsPowerShell\Microsoft.PowerShell_profile.ps1" $profilePath
+	}
+}
 
 Install-Program -Thumbs 'up' -ChocolateyKey 'cygwin' -Description "Voor diegenen die liever in een meer Linux-like omgeving werken is dit de topper. Waar Posh-Git ongeveer je enige optie is in PowerShell kun je bij Cygwin kiezen uit over de decennia gebouwde open source dotfiles..." -Site "https://www.cygwin.com/"
 
