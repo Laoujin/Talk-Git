@@ -9,8 +9,6 @@ pull without merge commit
 http://stackoverflow.com/questions/11575398/how-can-i-save-my-secret-keys-and-password-securely-in-my-version-control-system
 24 april
 
-https://github.com/tj/git-extras/wiki/Commands#git-extras
-
 
 git ls-files --> uses .gitignore, 
 git grep "html" -- "*.js"
@@ -25,74 +23,6 @@ o   Git in Visual Studio (en hoe snel je tegen de beperkingen van hun implementa
 o   SeeGit (tooltje van de Haack dat wel helpt om alles wat te visualiseren)
 
 
-Get all occurences of console.log() in working directory / index
-
-git config --global fetch.prune true
-git fetch -p
-
-
-
-
-Verzamelde mails:
-Basics:
-git init
--	Creates a .git directory – and that’s it!
-
-
-Git commit
-Git commit --amend
-?	Oeps!
-Git reset --hard HEAD@{1}
-?	Check stackoverflow for details
-
-
-
-
-git add --interactive
-
-https://help.github.com/articles/remove-sensitive-data/
-more stuff with update-index –assume-unchanged
-
-
-
-
-
-git reset --hard origin/master
-?	Remove local merge commits…
-
-git diff --stat origin/master
-git log origin/master..master
-
-
-http://justinhileman.info/article/git-pretty/git-pretty.png
-
-
-Git clean -f // clear untracked files
-Git clean -f --dry-run
-Git clean -f -d // also delete dirs.
-Git clean -f -X // delete gitignored files
-Git clean -i  // interactive
-
-
-“Both Modified”
-git mergetool --tool=bc3
-
-git mergetool –y // don’t ask for each file
-
-git checkout --ours filename.c
-git checkout --theirs filename.c
-git add filename.c
-git commit -m "using theirs"
-
-<<<<<<<
-Changes made on the branch that is being merged into. In most cases,
-this is the branch that I have currently checked out (i.e. HEAD).
-|||||||
-The common ancestor version.
-=======
-Changes made on the branch that is being merged in. This is often a 
-feature/topic branch.
->>>>>>>
 
 
 # Common base version of the file.
@@ -103,22 +33,3 @@ git show :2:some_file.cpp
 
 # 'Theirs' version of the file.
 git show :3:some_file.cpp
-
-
-http://stackoverflow.com/questions/1459150/how-to-undo-git-commit-amend-done-instead-of-git-commit
-
-
-Under [branch "master"], try adding the following to the repo's Git config file (.git/config):
-[branch "master"]
-    remote = origin
-    merge = refs/heads/master
-
-
-git br -u origin/sass
-?	Track remote branch
-
-gitconfig is awesome: "[push] default=tracking
-
-git branch --set-upstream-to=upstream/foo localfoo
-
-
