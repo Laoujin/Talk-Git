@@ -1,0 +1,116 @@
+[user]
+	name = Laoujin
+	email = woutervs@hotmail.com
+#	signingkey = <gpg-key-id>
+
+[merge]
+	prompt = false
+	tool = bc3
+#	guitool = winmerge
+
+[diff]
+	prompt = false
+	tool = bc3
+#	guitool = winmerge
+
+[difftool "bc3"]
+	path = C:\\Program Files (x86)\\Beyond Compare 3\\bcomp.exe
+#	cmd = \"c:/program files (x86)/beyond compare 3/bcomp.exe\" \"$LOCAL\" \"$REMOTE\"
+
+[mergetool "bc3"]
+	path = C:\\Program Files (x86)\\Beyond Compare 3\\bcomp.exe
+#	cmd = \"c:/program files (x86)/beyond compare 3/bcomp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+	trustExitCode = true
+	keepBackup = false
+
+[alias]
+	# Show defined aliases
+	alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\t=> \\2/' | sort
+
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+	stashes = stash list --date=relative
+
+	# -u: Show all untracked files (instead of just directories)
+	st = status -u
+
+	 # Find commits by source code
+	fc = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
+	# Find commits by commit message
+	fm = "!f() { git log --pretty=format:'%C(yellow)%h  %Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
+
+	# Delete merged branches but not branches called master or development
+	dm = !git branch --merged | egrep -v \"(\\*| ) (development|master)\" | xargs -n 1 git branch -d
+
+	# commit entire working directory: git ca "commit message"
+	ca = "!f() { git add -A; git commit -vm\"$1\"; }; f"
+
+	# Show commits with diff
+	lg = log -p
+
+	# View abbreviated SHA, description, and history graph of the latest 20 commits
+	l = log --color -20 --graph --pretty=format:'%C(magenta)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+
+	# Amend working directory
+	amend = !git add -A && git commit --amend --no-edit
+	 # Undo Commit; leaves files. Only for non-public commits
+	uncommit = reset --soft HEAD^
+
+	dt = difftool
+	mt = mergetool
+
+	# For more interesting aliases:
+	# Git Bash/cygwin: https://github.com/tj/git-extras/wiki/Commands#git-extras
+
+[core]
+	autocrlf = true
+	excludesfile = ~/.gitignore_global
+	attributesfile = ~/.gitattributes_global
+#	pager = more
+#	editor = emacs
+#	editor = "\"C:\\Program Files\\Sublime Text 3\\subl.exe\" -n -w"
+
+[push]
+	default = simple
+
+[credential]
+	helper = !'C:\\Users\\Wouter\\AppData\\Roaming\\GitCredStore\\git-credential-winstore.exe'
+
+# Available colors: normal, black, red, green, yellow, blue, magenta, cyan, or white
+# Second optional color param values: bold, dim, ul (underline), blink, and reverse (swap foreground and background)
+
+[color "branch"]
+	current = yellow
+	local = white
+	remote = magenta
+
+[color "status"]
+	header = white
+	changed = magenta bold
+	untracked = magenta bold
+	unmerged = magenta reverse
+	added = yellow
+	branch = white
+
+[color "diff"]
+	meta = blue white
+	frag = normal bold
+	old = magenta bold
+	new = green bold
+
+# [include]
+# 	path = /path/to/foo.inc ; include by absolute path
+# 	path = foo ; expand "foo" relative to the current file
+# 	path = ~/foo ; expand "foo" in your $HOME directory
+
+# help.autocorrect = 1
+# WARNING: You called a Git command named 'chekcout', which does not exist.
+# Continuing under the assumption that you meant 'checkout'
+
+# commit.template = ~/.gitmessage.txt

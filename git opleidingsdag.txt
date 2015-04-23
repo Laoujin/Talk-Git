@@ -5,25 +5,12 @@
 https://presentate.com/bobthecow/talks/changing-history
 
 
-
-git update-index --assume-unchanged filename
-
-
-make sure no keys, passwords are in any commit when pushing to github
---> Amazon keys are being harvested on GitHub and used for bitcoin mining
-
 pull without merge commit
 http://stackoverflow.com/questions/11575398/how-can-i-save-my-secret-keys-and-password-securely-in-my-version-control-system
 24 april
 
 https://github.com/tj/git-extras/wiki/Commands#git-extras
 
-git pull 
-vs
-git fetch
-git merge
-
---> include reg files voor git bash / powershell / st3
 
 git ls-files --> uses .gitignore, 
 git grep "html" -- "*.js"
@@ -31,23 +18,11 @@ git log --grep=fake
 git log --grep=frotz --and --author=Linus
 git grep -l --all-match -e shutdown -e localhost
 
-Configure mergetool
-Configure editor (vi)
 
 
-
-
-
-Git – zou eerst kunnen checken wat de Git ervaring is en/of welke interesses om dan ergens een selectie te doen uit:
-•         Basics
-o   Commando’s: init, add, status, commit, log, diff, push, pull, merge
 o   Git internals: den DAG ?
 o   Git in Visual Studio (en hoe snel je tegen de beperkingen van hun implementatie aanloopt: vb geen meerdere remotes mogelijk)
 o   SeeGit (tooltje van de Haack dat wel helpt om alles wat te visualiseren)
-o   Git flow
-o   Commando’s: stash, branching, checkout, amending, cherry-pick, rebase, revert, …
-o   Git modules
-
 
 
 Get all occurences of console.log() in working directory / index

@@ -93,3 +93,4 @@ Write-Title "Andere"
 
 Write-Host "SeeGit"
 Write-Host "VisualStudio plugins"
+Write-Host "Zie ook res/*.reg voor 'Open cmder here' contextmenu (ook voor Sublime text)"
