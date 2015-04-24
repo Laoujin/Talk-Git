@@ -18,9 +18,6 @@ namespace TribalWars.Maps.Manipulators
     /// </summary>
     public abstract class ManipulatorBase : IContextMenuProvider
     {
-        #region Fields
-        protected readonly Map _map;
-        #endregion
 
         #region Constructors
         protected ManipulatorBase(Map map)
@@ -116,14 +113,6 @@ namespace TribalWars.Maps.Manipulators
         }
 
         /// <summary>
-        /// The NEW XDocument powered persistence
-        /// </summary>
-        public virtual void ReadXml(XDocument doc)
-        {
-            
-        }
-
-        /// <summary>
         /// Cleanup anything when switching worlds or settings
         /// </summary>
         protected internal abstract void CleanUp();
@@ -132,6 +121,8 @@ namespace TribalWars.Maps.Manipulators
         {
             
         }
+
+//jaja
 
         public virtual void Paint(MapPaintEventArgs e, bool isActiveManipulator)
         {
