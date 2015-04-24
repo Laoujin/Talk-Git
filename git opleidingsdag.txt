@@ -1,3 +1,4 @@
+24 april
 9u30 - 10u30: Git for .NET devs
 
 
@@ -7,7 +8,6 @@ https://presentate.com/bobthecow/talks/changing-history
 
 pull without merge commit
 http://stackoverflow.com/questions/11575398/how-can-i-save-my-secret-keys-and-password-securely-in-my-version-control-system
-24 april
 
 
 git ls-files --> uses .gitignore, 
